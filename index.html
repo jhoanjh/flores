@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enviar Flores</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            text-align: center; 
+            padding: 20px; 
+            color: #fff; 
+            margin: 0; 
+            min-height: 100vh; 
+            background-image: url('https://img.freepik.com/fotos-premium/fondo-pantalla-anime-hermosa-nina-flores_675932-368.jpg'); /* Imagen de fondo */
+            background-size: cover; /* Ajustar la imagen al tamaño del viewport */
+            background-position: center; /* Centrar la imagen */
+            background-attachment: fixed; /* Fijar la imagen en el fondo */
+        }
+        .container {
+            position: relative;
+            z-index: 1; 
+            background-color: rgba(255, 255, 255, 0.9); 
+            border-radius: 15px;
+            padding: 20px; 
+            max-width: 90%; 
+            margin: 20px auto; 
+            color: #333; 
+        }
+        .button { 
+            padding: 10px 20px; 
+            font-size: 16px; 
+            cursor: pointer; 
+            background-color: #ff9f9f; 
+            border: none; 
+            color: white; 
+            border-radius: 5px; 
+            transition: background-color 0.3s ease;
+        }
+        .button:hover { background-color: #ff6f6f; }
+        #dedicatoria { 
+            display: none; 
+            opacity: 0; 
+            transition: opacity 0.5s ease-in-out;
+        }
+        #dedicatoria.show { 
+            display: block; 
+            opacity: 1; 
+        }
+        textarea { 
+            width: 100%; 
+            height: 150px; 
+            border: none; 
+            padding: 10px; 
+            background-color: transparent;
+            font-size: 16px; 
+            color: #333;
+            resize: none;
+            margin-bottom: 10px; 
+        }
+        .media-container {
+            text-align: center;
+            margin: 10px 0; 
+            padding: 10px; 
+            border: 2px solid #ff9f9f; 
+            border-radius: 10px; 
+            background-color: rgba(255, 255, 255, 0.8); 
+            display: inline-block; 
+        }
+        .media-container img {
+            max-width: 200px; 
+            height: auto; 
+            border-radius: 10px; 
+        }
+
+        @media (max-width: 600px) {
+            .button {
+                font-size: 14px; 
+                padding: 8px 16px; 
+            }
+        }
+    </style>
+    <script>
+        function showDedicatoria() {
+            document.getElementById('inicio').style.opacity = '0';
+            setTimeout(() => {
+                document.getElementById('inicio').style.display = 'none';
+                document.getElementById('dedicatoria').style.display = 'block';
+                document.getElementById('dedicatoria').classList.add('show');
+            }, 500);
+        }
+
+        function goToPage() {
+            window.location.href = 'https://streaming-johan.github.io/ramoflores/';
+        }
+    </script>
+</head>
+<body>
+    <div id="inicio" class="container">
+        <h1>TENGO UNA SORPRESA PARA TI.</h1>
+        <button class="button" onclick="showDedicatoria()">Abrir</button>
+    </div>
+    <div id="dedicatoria" class="container">
+        <h1>PARA TI CON CARIÑO</h1>
+        <textarea readonly>Hola. Espero que estas flores alegren tu día y te recuerden cuánto te aprecio. Eres una persona maravillosa y mereces todo la felicidad del mundo. Tu sonrisa ilumina cualquier lugar y tu amistad es un regalo invaluable. Siempre estaré aquí para ti. Con cariño, tu amigo.</textarea>
+        <div class="media-container">
+            <img src="https://www.dropbox.com/scl/fi/0jf3z5c9hashijlkzmggx/tenor.gif?rlkey=mkl4u8ehhuhcxiau9rmetohtd&st=lzrexcx3&dl=1" alt="GIF corto">
+        </div>
+        <button class="button" onclick="goToPage()">Abrir Ramo de Flores</button>
+    </div>
+</body>
+</html>
